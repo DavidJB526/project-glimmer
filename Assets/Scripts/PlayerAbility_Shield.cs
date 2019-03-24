@@ -31,6 +31,6 @@ public class PlayerAbility_Shield : PlayerAbility
         anim.ResetTrigger("SlamAttack");
 
         UpdateCooldown();
-        UpdateUI();
+        UpdateCooldownUI();
     }
 }

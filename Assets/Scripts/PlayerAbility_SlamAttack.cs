@@ -20,6 +20,6 @@ public class PlayerAbility_SlamAttack : PlayerAbility
         }
 
         UpdateCooldown();
-        UpdateUI();
+        UpdateCooldownUI();
     }
 }

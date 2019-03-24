@@ -22,14 +22,22 @@ public class PlayerAbility_SlashAttack : PlayerAbility
 
     private void Update()
     {
-        if (Input.GetButtonDown("Slash Attack") && currentCooldownTime <= 0)
+        if (Input.GetButtonDown("Slash Attack") && currentCooldownTime <= 0 && !isActive)
         {
-            anim.SetTrigger("SlashAttack");
-            currentCooldownTime = cooldownTime;
+            currentActiveTime = 0;
+            isActive = true;
         }
 
+        //if (Input.GetButtonDown("Slash Attack") && currentActiveTime >= 0)
+        //{
+        //    anim.SetTrigger("SlashAttack");
+        //    currentActiveTime = 0;
+        //}
+
+        UpdateActive();
+        UpdateActiveUI();
         UpdateCooldown();
-        UpdateUI();
+        UpdateCooldownUI();
     }
 
     private void SpawnSlash(float angle)
