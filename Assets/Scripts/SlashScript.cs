@@ -21,7 +21,7 @@ public class SlashScript : MonoBehaviour
         else if(other.tag != "Player" && other.tag != "Shield")
         {
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }        
     }
 }
