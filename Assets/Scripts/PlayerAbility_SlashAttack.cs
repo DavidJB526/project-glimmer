@@ -22,7 +22,7 @@ public class PlayerAbility_SlashAttack : PlayerAbility
 
     private void Update()
     {
-        if (Input.GetButtonDown("Slash Attack") && currentCooldownTime <= 0 && !isActive)
+        if (Input.GetButtonDown("Slash Attack") && currentCooldownTime <= 0 && !isActive && !anim.GetBool("Blocking"))
         {
             currentActiveTime = 0;
             isActive = true;

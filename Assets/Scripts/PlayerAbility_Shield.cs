@@ -14,13 +14,14 @@ public class PlayerAbility_Shield : PlayerAbility
 
     private void Update()
     {
-        if (Input.GetButtonDown("Shield") && currentCooldownTime <= 0)
+        //this needs to be rewritten at some point
+        if (Input.GetButtonDown("Shield") && currentCooldownTime <= 0 && !anim.GetBool("SlashMode") && GetComponent<PlayerAbility_SlamAttack>().currentCooldownTime <= 3)
         {
             isShielded = true;
             isActive = true;
             currentActiveTime = 0;
         }
-        else if (Input.GetButtonUp("Shield"))
+        else if (Input.GetButtonUp("Shield") || Input.GetButton("Slam Attack"))
         {
             isShielded = false;
             isActive = false;
@@ -38,7 +39,7 @@ public class PlayerAbility_Shield : PlayerAbility
         }
 
         anim.SetBool("Blocking", isShielded);
-        anim.ResetTrigger("SlamAttack");
+        //anim.ResetTrigger("SlamAttack");
 
         UpdateActive();
         UpdateActiveUI();
