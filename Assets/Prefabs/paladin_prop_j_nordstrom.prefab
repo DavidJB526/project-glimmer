@@ -1683,6 +1683,7 @@ GameObject:
   - component: {fileID: 249684350}
   - component: {fileID: 1932226639808675381}
   - component: {fileID: 249684353}
+  - component: {fileID: 249684356}
   m_Layer: 0
   m_Name: paladin_prop_j_nordstrom
   m_TagString: Player
@@ -1773,6 +1774,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8bf897b53e58c46a55409a55e73abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownSlider: {fileID: 0}
+  cooldownText: {fileID: 0}
+  cooldownTime: 2
+  currentCooldownTime: 0
   slashObject: {fileID: 1149824236119125772, guid: f22b6a36ae0c07e4db54ddcfe3ff3e07,
     type: 3}
   slashSpawner: {fileID: 4306670556241441554}
@@ -1789,6 +1794,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72daa82b1c6776b4683445921e66a877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownSlider: {fileID: 0}
+  cooldownText: {fileID: 0}
+  cooldownTime: 5
+  currentCooldownTime: 0
+--- !u!114 &249684356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259210829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec85c98e313d35469f1d4f8fb8835db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownSlider: {fileID: 0}
+  cooldownText: {fileID: 0}
+  cooldownTime: 10
+  currentCooldownTime: 0
 --- !u!1 &1270530047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,7 +2680,7 @@ GameObject:
   - component: {fileID: 825453474367358740}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

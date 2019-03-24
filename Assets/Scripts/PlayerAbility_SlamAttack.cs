@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSlamAttack : MonoBehaviour
+public class PlayerAbility_SlamAttack : PlayerAbility
 {
     private Animator anim;
 
@@ -13,9 +13,13 @@ public class PlayerSlamAttack : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Slam Attack"))
+        if(Input.GetButtonDown("Slam Attack") && currentCooldownTime <= 0)
         {
             anim.SetTrigger("SlamAttack");
+            currentCooldownTime = cooldownTime;
         }
+
+        UpdateCooldown();
+        UpdateUI();
     }
 }

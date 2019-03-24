@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerSlashAttack : MonoBehaviour
+public class PlayerAbility_SlashAttack : PlayerAbility
 {
     [SerializeField]
     private Rigidbody slashObject;
     [SerializeField]
     private Transform slashSpawner;
+
     [SerializeField]
     private float slashSpeed;
 
@@ -20,10 +22,14 @@ public class PlayerSlashAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Slash Attack"))
+        if (Input.GetButtonDown("Slash Attack") && currentCooldownTime <= 0)
         {
             anim.SetTrigger("SlashAttack");
+            currentCooldownTime = cooldownTime;
         }
+
+        UpdateCooldown();
+        UpdateUI();
     }
 
     private void SpawnSlash(float angle)
