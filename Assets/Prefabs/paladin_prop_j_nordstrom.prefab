@@ -1680,6 +1680,7 @@ GameObject:
   - component: {fileID: 1259210831}
   - component: {fileID: 1259210830}
   - component: {fileID: 1932226639808675381}
+  - component: {fileID: 249684353}
   m_Layer: 0
   m_Name: paladin_prop_j_nordstrom
   m_TagString: Untagged
@@ -1704,6 +1705,7 @@ Transform:
   - {fileID: 619683438}
   - {fileID: 1270530048}
   - {fileID: 4306670556241441554}
+  - {fileID: 1476571396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1742,6 +1744,18 @@ MonoBehaviour:
     type: 3}
   slashSpawner: {fileID: 4306670556241441554}
   slashSpeed: 20
+--- !u!114 &249684353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259210829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72daa82b1c6776b4683445921e66a877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1270530047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2055,64 @@ Transform:
   m_Father: {fileID: 244763790}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1476571395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1476571396}
+  - component: {fileID: 1476571397}
+  - component: {fileID: 6883060942468357003}
+  m_Layer: 0
+  m_Name: PushbackArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1476571396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476571395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 5.25}
+  m_Children: []
+  m_Father: {fileID: 1259210831}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1476571397
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476571395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6883060942468357003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476571395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d481a767b592b84e869fd3791ffd0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushbackForce: 2000
 --- !u!1 &1508835591
 GameObject:
   m_ObjectHideFlags: 0

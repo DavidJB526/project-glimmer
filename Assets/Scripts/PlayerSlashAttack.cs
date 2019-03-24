@@ -20,7 +20,7 @@ public class PlayerSlashAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Slash Attack"))
+        if (Input.GetButtonDown("Slash Attack"))
         {
             anim.SetTrigger("SlashAttack");
         }
