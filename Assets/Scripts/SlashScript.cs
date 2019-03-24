@@ -18,8 +18,10 @@ public class SlashScript : MonoBehaviour
         {
             //Deal Damage here
         }
-
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        else if(other.tag != "Player" && other.tag != "Shield")
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }        
     }
 }
