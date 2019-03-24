@@ -30,12 +30,14 @@ public class PlayerAbility_SlashAttack : PlayerAbility
 
         if (Input.GetButtonDown("Fire1") && isActive)
         {
-            anim.SetTrigger("SlashAttack");
+            anim.SetTrigger("Attack");
         }
         else if (!isActive)
         {
-            anim.ResetTrigger("SlashAttack");
+            anim.ResetTrigger("Attack");
         }
+
+        anim.SetBool("SlashMode", isActive);
 
         UpdateActive();
         UpdateActiveUI();

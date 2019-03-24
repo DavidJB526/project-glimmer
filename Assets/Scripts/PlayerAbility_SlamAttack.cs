@@ -13,7 +13,7 @@ public class PlayerAbility_SlamAttack : PlayerAbility
 
     private void Update()
     {
-        if(Input.GetButtonDown("Slam Attack") && currentCooldownTime <= 0)
+        if(Input.GetButtonDown("Slam Attack") && currentCooldownTime <= 0 && !anim.GetBool("SlashMode"))
         {
             anim.SetTrigger("SlamAttack");
             currentCooldownTime = cooldownTime;

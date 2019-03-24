@@ -636,11 +636,6 @@ PrefabInstance:
       objectReference: {fileID: 397115813}
     - target: {fileID: 1932226639808675381, guid: 52d4596acd481bf4cb68d71eb0c64a48,
         type: 3}
-      propertyPath: activeTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1932226639808675381, guid: 52d4596acd481bf4cb68d71eb0c64a48,
-        type: 3}
       propertyPath: activeSlider
       value: 
       objectReference: {fileID: 1204901962}
@@ -673,10 +668,6 @@ PrefabInstance:
       propertyPath: activeText
       value: 
       objectReference: {fileID: 966665572}
-    - target: {fileID: 249684356, guid: 52d4596acd481bf4cb68d71eb0c64a48, type: 3}
-      propertyPath: activeTime
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52d4596acd481bf4cb68d71eb0c64a48, type: 3}
 --- !u!1 &628030241
