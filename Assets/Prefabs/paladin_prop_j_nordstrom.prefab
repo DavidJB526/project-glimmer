@@ -1778,6 +1778,11 @@ MonoBehaviour:
   cooldownText: {fileID: 0}
   cooldownTime: 2
   currentCooldownTime: 0
+  activeSlider: {fileID: 0}
+  activeText: {fileID: 0}
+  activeTime: 5
+  currentActiveTime: 0
+  isActive: 0
   slashObject: {fileID: 1149824236119125772, guid: f22b6a36ae0c07e4db54ddcfe3ff3e07,
     type: 3}
   slashSpawner: {fileID: 4306670556241441554}
@@ -1798,6 +1803,11 @@ MonoBehaviour:
   cooldownText: {fileID: 0}
   cooldownTime: 5
   currentCooldownTime: 0
+  activeSlider: {fileID: 0}
+  activeText: {fileID: 0}
+  activeTime: 0
+  currentActiveTime: 0
+  isActive: 0
 --- !u!114 &249684356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,6 +1824,11 @@ MonoBehaviour:
   cooldownText: {fileID: 0}
   cooldownTime: 10
   currentCooldownTime: 0
+  activeSlider: {fileID: 0}
+  activeText: {fileID: 0}
+  activeTime: 10
+  currentActiveTime: 0
+  isActive: 0
 --- !u!1 &1270530047
 GameObject:
   m_ObjectHideFlags: 0
