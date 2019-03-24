@@ -28,11 +28,14 @@ public class PlayerAbility_SlashAttack : PlayerAbility
             isActive = true;
         }
 
-        //if (Input.GetButtonDown("Slash Attack") && currentActiveTime >= 0)
-        //{
-        //    anim.SetTrigger("SlashAttack");
-        //    currentActiveTime = 0;
-        //}
+        if (Input.GetButtonDown("Fire1") && isActive)
+        {
+            anim.SetTrigger("SlashAttack");
+        }
+        else if (!isActive)
+        {
+            anim.ResetTrigger("SlashAttack");
+        }
 
         UpdateActive();
         UpdateActiveUI();

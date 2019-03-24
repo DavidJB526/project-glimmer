@@ -17,19 +17,31 @@ public class PlayerAbility_Shield : PlayerAbility
         if (Input.GetButtonDown("Shield") && currentCooldownTime <= 0)
         {
             isShielded = true;
+            isActive = true;
+            currentActiveTime = 0;
         }
         else if (Input.GetButtonUp("Shield"))
         {
             isShielded = false;
+            isActive = false;
             if (currentCooldownTime <= 0)
             {
-                currentCooldownTime = cooldownTime;
+                currentCooldownTime = cooldownTime - ((Mathf.Round(activeTime - currentActiveTime) * 10) / 10);
             }            
+        }
+        else if (currentActiveTime >= activeTime)
+        {
+            isShielded = false;
+            isActive = false;
+            currentCooldownTime = cooldownTime;
+            currentActiveTime = 0;
         }
 
         anim.SetBool("Blocking", isShielded);
         anim.ResetTrigger("SlamAttack");
 
+        UpdateActive();
+        UpdateActiveUI();
         UpdateCooldown();
         UpdateCooldownUI();
     }
