@@ -20,5 +20,6 @@ public class SlashScript : MonoBehaviour
         }
 
         Destroy(gameObject);
+        Destroy(other.gameObject);
     }
 }

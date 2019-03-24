@@ -26,20 +26,11 @@ public class PlayerSlashAttack : MonoBehaviour
         }
     }
 
-    private void SpawnSlashRight()
+    private void SpawnSlash(float angle)
     {
         Rigidbody slashClone;
 
-        slashClone = Instantiate(slashObject, slashSpawner.position, slashSpawner.rotation * Quaternion.Euler(0, 0, 45)) as Rigidbody;
-        slashClone.velocity = transform.TransformDirection(slashSpawner.forward * slashSpeed);
-        anim.ResetTrigger("SlashAttack");
-    }
-
-    private void SpawnSlashLeft()
-    {
-        Rigidbody slashClone;
-
-        slashClone = Instantiate(slashObject, slashSpawner.position, slashSpawner.rotation * Quaternion.Euler(0, 0, -45)) as Rigidbody;
+        slashClone = Instantiate(slashObject, slashSpawner.position, slashSpawner.rotation * Quaternion.Euler(0, 0, angle)) as Rigidbody;
         slashClone.velocity = transform.TransformDirection(slashSpawner.forward * slashSpeed);
         anim.ResetTrigger("SlashAttack");
     }
