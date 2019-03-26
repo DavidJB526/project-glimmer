@@ -1681,6 +1681,7 @@ GameObject:
   - component: {fileID: 1259210830}
   - component: {fileID: 249684351}
   - component: {fileID: 249684350}
+  - component: {fileID: 1653516185}
   - component: {fileID: 1932226639808675381}
   - component: {fileID: 249684353}
   - component: {fileID: 249684356}
@@ -1762,6 +1763,21 @@ CapsuleCollider:
   m_Height: 1.72
   m_Direction: 1
   m_Center: {x: 0, y: 0.855, z: 0}
+--- !u!114 &1653516185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259210829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34467696cd706d644b50cf24fd5a91b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cm_MainCamera: {fileID: 0}
+  cm_SlashCamera: {fileID: 0}
+  rotateSpeed: 50
 --- !u!114 &1932226639808675381
 MonoBehaviour:
   m_ObjectHideFlags: 0

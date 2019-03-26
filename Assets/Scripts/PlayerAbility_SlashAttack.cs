@@ -50,7 +50,7 @@ public class PlayerAbility_SlashAttack : PlayerAbility
         Rigidbody slashClone;
 
         slashClone = Instantiate(slashObject, slashSpawner.position, slashSpawner.rotation * Quaternion.Euler(0, 0, angle)) as Rigidbody;
-        slashClone.velocity = transform.TransformDirection(slashSpawner.forward * slashSpeed);
+        slashClone.velocity = slashSpawner.forward * slashSpeed;
         anim.ResetTrigger("SlashAttack");
     }
 }
