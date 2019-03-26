@@ -65,4 +65,14 @@ public class PlayerAbility : MonoBehaviour
             currentActiveTime += Time.deltaTime;
         }
     }
+
+    public void SetCanMoveFalse()
+    {
+        this.gameObject.GetComponent<PlayerMovement>().canMove = false;
+    }
+
+    public void SetCanMoveTrue()
+    {
+        this.gameObject.GetComponent<PlayerMovement>().canMove = true;
+    }
 }

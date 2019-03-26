@@ -19,13 +19,13 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private Rigidbody rb;
 
-    Vector3 direction;
+    public bool canMove;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        //direction = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical")));
+        canMove = true;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     private void Rotate()
     {
 
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        if (canMove && (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0))
         {
             transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * rotateSpeed);
         }

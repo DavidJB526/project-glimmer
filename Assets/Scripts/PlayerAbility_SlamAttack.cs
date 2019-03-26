@@ -17,6 +17,7 @@ public class PlayerAbility_SlamAttack : PlayerAbility
         {
             anim.SetTrigger("SlamAttack");
             currentCooldownTime = cooldownTime;
+            SetCanMoveFalse();
         }
 
         UpdateCooldown();

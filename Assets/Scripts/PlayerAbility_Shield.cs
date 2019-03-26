@@ -20,6 +20,7 @@ public class PlayerAbility_Shield : PlayerAbility
             isShielded = true;
             isActive = true;
             currentActiveTime = 0;
+            SetCanMoveFalse();
         }
         else if (Input.GetButtonUp("Shield") || Input.GetButton("Slam Attack"))
         {
