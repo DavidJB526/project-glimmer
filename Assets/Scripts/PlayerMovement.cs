@@ -14,18 +14,22 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
+    private GameObject cm_MainCamera;
+    [SerializeField]
     private float rotateSpeed;
 
     private Animator anim;
     private Rigidbody rb;
-
     public bool canMove;
+
+    Vector3 direction;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         canMove = true;
+        //direction = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical")));
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,9 +56,19 @@ public class PlayerMovement : MonoBehaviour
     private void Rotate()
     {
 
-        if (canMove && (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0))
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
         {
-            transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * rotateSpeed);
+            if (anim.GetBool("SlashMode"))
+            {
+                transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * rotateSpeed);
+            }
+            else if (canMove)
+            {
+                //look with Camera
+                transform.rotation = Quaternion.LookRotation(cm_MainCamera.transform.forward, cm_MainCamera.transform.up);
+                //lock rotation to only the Y axis
+                transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+            }   
         }
     }
 }
