@@ -6,6 +6,7 @@ public class PlayerAbility_Shield : PlayerAbility
 {
     private Animator anim;
     private bool isShielded;
+    private bool onCooldown;
 
     private void Start()
     {
@@ -14,33 +15,36 @@ public class PlayerAbility_Shield : PlayerAbility
 
     private void Update()
     {
+        if (currentActiveTime >= activeTime)
+        {
+            isShielded = false;
+            isActive = false;
+            onCooldown = true;
+            currentCooldownTime = cooldownTime - ((Mathf.Round(activeTime - currentActiveTime) * 10) / 10);
+            currentActiveTime = 0;
+        }
         //this needs to be rewritten at some point
-        if (Input.GetButtonDown("Shield") && currentCooldownTime <= 0 && !anim.GetBool("SlashMode") && GetComponent<PlayerAbility_SlamAttack>().currentCooldownTime <= 3)
+
+        if (Input.GetButtonDown("Shield") && !anim.GetBool("SlashMode") && !onCooldown && GetComponent<PlayerAbility_SlamAttack>().currentCooldownTime <= 3)
         {
             isShielded = true;
             isActive = true;
-            currentActiveTime = 0;
+            currentActiveTime = currentCooldownTime;
             SetCanMoveFalse();
         }
-        else if (Input.GetButtonUp("Shield") || Input.GetButton("Slam Attack"))
+        else if (!onCooldown && (Input.GetButtonUp("Shield") || Input.GetButton("Slam Attack")))
         {
             isShielded = false;
             isActive = false;
-            if (currentCooldownTime <= 0)
-            {
-                currentCooldownTime = cooldownTime - ((Mathf.Round(activeTime - currentActiveTime) * 10) / 10);
-            }            
+            currentCooldownTime = cooldownTime - ((Mathf.Round(activeTime - currentActiveTime) * 10) / 10);
         }
-        else if (currentActiveTime >= activeTime)
+
+        if (currentCooldownTime <= 0)
         {
-            isShielded = false;
-            isActive = false;
-            currentCooldownTime = cooldownTime;
-            currentActiveTime = 0;
+            onCooldown = false;
         }
 
         anim.SetBool("Blocking", isShielded);
-        //anim.ResetTrigger("SlamAttack");
 
         UpdateActive();
         UpdateActiveUI();
