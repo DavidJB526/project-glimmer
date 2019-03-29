@@ -822,7 +822,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628030241}
-  m_LocalRotation: {x: 0.12949006, y: -0.08178124, z: 0.010716918, w: 0.9881444}
+  m_LocalRotation: {x: 0.12949005, y: -0.08178126, z: 0.010716939, w: 0.9881444}
   m_LocalPosition: {x: 0.49319655, y: 2.5, z: -11.959182}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2223,17 +2223,17 @@ PrefabInstance:
     - target: {fileID: 4828389881965773543, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12949006
+      value: 0.12949005
       objectReference: {fileID: 0}
     - target: {fileID: 4828389881965773543, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.08178124
+      value: -0.08178126
       objectReference: {fileID: 0}
     - target: {fileID: 4828389881965773543, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.010716918
+      value: 0.010716939
       objectReference: {fileID: 0}
     - target: {fileID: 4828389881965773543, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
@@ -2303,7 +2303,7 @@ PrefabInstance:
     - target: {fileID: 4828389883764702084, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00074662204
+      value: 0.00074662216
       objectReference: {fileID: 0}
     - target: {fileID: 4828389883764702084, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
@@ -2318,12 +2318,12 @@ PrefabInstance:
     - target: {fileID: 4828389882214736743, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001522803
+      value: 0.000000015228032
       objectReference: {fileID: 0}
     - target: {fileID: 4828389882214736743, guid: 15a60aa8606a18b40b8aebb3117a25bc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000008010412
+      value: -0.000000008010406
       objectReference: {fileID: 0}
     - target: {fileID: 722480894, guid: 15a60aa8606a18b40b8aebb3117a25bc, type: 3}
       propertyPath: m_XDamping
