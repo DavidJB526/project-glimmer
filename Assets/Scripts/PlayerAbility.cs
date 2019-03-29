@@ -59,7 +59,7 @@ public class PlayerAbility : MonoBehaviour
         activeSlider.gameObject.SetActive(isActive);
     }
 
-    protected void UpdateActive()
+    protected virtual void UpdateActive()
     {
         if (currentActiveTime >= activeTime && isActive)
         {

@@ -35,8 +35,12 @@ public class PlayerAbility_Shield : PlayerAbility
         else if (!onCooldown && (Input.GetButtonUp("Shield") || Input.GetButton("Slam Attack")))
         {
             isShielded = false;
-            isActive = false;
+            //isActive = false;
             currentCooldownTime = cooldownTime - ((Mathf.Round(activeTime - currentActiveTime) * 10) / 10);
+        }
+        else if (currentActiveTime <= 0)
+        {
+            isActive = false;
         }
 
         if (currentCooldownTime <= 0)
@@ -50,5 +54,17 @@ public class PlayerAbility_Shield : PlayerAbility
         UpdateActiveUI();
         UpdateCooldown();
         UpdateCooldownUI();
+    }
+
+    protected override void UpdateActive()
+    {
+        if (!isShielded && !onCooldown)
+        {
+            currentActiveTime = currentCooldownTime;
+        }
+        else
+        {
+            base.UpdateActive();
+        }
     }
 }
