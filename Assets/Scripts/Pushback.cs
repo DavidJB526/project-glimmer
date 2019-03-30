@@ -11,12 +11,15 @@ public class Pushback : MonoBehaviour {
     {
         if (other.gameObject.tag != "Player" /*other.CompareTag("Player")*/)
         {
+            if(other.gameObject.GetComponent<Rigidbody>() != null)
+            {
             Vector3 pushbackDirection = -(other.transform.position - transform.position);
 
             pushbackDirection =- pushbackDirection.normalized;
 
             other.GetComponent<Rigidbody>().AddForce(pushbackDirection * pushbackForce * 100);
             Debug.Log("Push hit" + pushbackDirection);
+            }
         }        
     }
 }

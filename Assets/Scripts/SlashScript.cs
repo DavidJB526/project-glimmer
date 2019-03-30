@@ -17,11 +17,11 @@ public class SlashScript : MonoBehaviour
         if (other.tag == "Enemy")
         {
             //Deal Damage here
-        }
-        else if(other.tag != "Player" && other.tag != "Shield")
-        {
             Destroy(other.gameObject);
-            //Destroy(gameObject);
+        }
+        else if(other.tag != "Player")
+        {
+            Destroy(gameObject);
         }        
     }
 }
