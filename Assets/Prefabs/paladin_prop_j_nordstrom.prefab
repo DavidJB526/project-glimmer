@@ -1681,6 +1681,7 @@ GameObject:
   - component: {fileID: 1259210830}
   - component: {fileID: 249684351}
   - component: {fileID: 249684350}
+  - component: {fileID: 1653516185}
   - component: {fileID: 1932226639808675381}
   - component: {fileID: 249684353}
   - component: {fileID: 249684356}
@@ -1740,7 +1741,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259210829}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1762,6 +1763,21 @@ CapsuleCollider:
   m_Height: 1.72
   m_Direction: 1
   m_Center: {x: 0, y: 0.855, z: 0}
+--- !u!114 &1653516185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259210829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34467696cd706d644b50cf24fd5a91b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cm_MainCamera: {fileID: 0}
+  rotateSpeed: 50
+  canMove: 0
 --- !u!114 &1932226639808675381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,12 +1793,10 @@ MonoBehaviour:
   cooldownSlider: {fileID: 0}
   cooldownText: {fileID: 0}
   cooldownTime: 2
-  currentCooldownTime: 0
   activeSlider: {fileID: 0}
   activeText: {fileID: 0}
   activeTime: 5
-  currentActiveTime: 0
-  isActive: 0
+  currentCooldownTime: 0
   slashObject: {fileID: 1149824236119125772, guid: f22b6a36ae0c07e4db54ddcfe3ff3e07,
     type: 3}
   slashSpawner: {fileID: 4306670556241441554}
@@ -1802,12 +1816,10 @@ MonoBehaviour:
   cooldownSlider: {fileID: 0}
   cooldownText: {fileID: 0}
   cooldownTime: 5
-  currentCooldownTime: 0
   activeSlider: {fileID: 0}
   activeText: {fileID: 0}
   activeTime: 0
-  currentActiveTime: 0
-  isActive: 0
+  currentCooldownTime: 0
 --- !u!114 &249684356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,12 +1835,10 @@ MonoBehaviour:
   cooldownSlider: {fileID: 0}
   cooldownText: {fileID: 0}
   cooldownTime: 10
-  currentCooldownTime: 0
   activeSlider: {fileID: 0}
   activeText: {fileID: 0}
   activeTime: 10
-  currentActiveTime: 0
-  isActive: 0
+  currentCooldownTime: 0
 --- !u!1 &1270530047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,7 +2195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d481a767b592b84e869fd3791ffd0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushbackForce: 20
+  pushbackForce: 400
 --- !u!1 &1508835591
 GameObject:
   m_ObjectHideFlags: 0

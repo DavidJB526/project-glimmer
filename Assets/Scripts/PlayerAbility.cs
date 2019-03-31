@@ -5,24 +5,30 @@ using UnityEngine.UI;
 
 public class PlayerAbility : MonoBehaviour
 {
-    public Slider cooldownSlider;
-    public Text cooldownText;
-    public float cooldownTime;
+    [SerializeField]
+    protected Slider cooldownSlider;
+    [SerializeField]
+    protected Text cooldownText;
+    [SerializeField]
+    protected float cooldownTime;
+    [SerializeField]
+    protected Slider activeSlider;
+    [SerializeField]
+    protected Text activeText;
+    [SerializeField]
+    protected float activeTime;
+
     public float currentCooldownTime;
+    protected float currentActiveTime;
+    protected bool isActive;
 
-    public Slider activeSlider;
-    public Text activeText;
-    public float activeTime;
-    public float currentActiveTime;
-    public bool isActive;
-
-    public void UpdateCooldownUI()
+    protected void UpdateCooldownUI()
     {
         cooldownText.text = (Mathf.Round(currentCooldownTime * 10) / 10).ToString();
         cooldownSlider.maxValue = cooldownTime;
         cooldownSlider.value = currentCooldownTime;
 
-        if (currentCooldownTime <= 0)
+        if (currentCooldownTime <= 0 || isActive)
         {
             cooldownText.gameObject.SetActive(false);
             cooldownSlider.gameObject.SetActive(false);
@@ -34,16 +40,16 @@ public class PlayerAbility : MonoBehaviour
         }
     }
 
-    public void UpdateCooldown()
+    protected void UpdateCooldown()
     {
         if (currentCooldownTime > 0)
         {
             currentCooldownTime -= Time.deltaTime;
-            isActive = false;
+            //isActive = false;
         }
     }
 
-    public void UpdateActiveUI()
+    protected void UpdateActiveUI()
     {
         activeText.text = (Mathf.Round(currentActiveTime * 10) / 10).ToString();
         activeSlider.maxValue = activeTime;
@@ -53,16 +59,27 @@ public class PlayerAbility : MonoBehaviour
         activeSlider.gameObject.SetActive(isActive);
     }
 
-    public void UpdateActive()
+    protected virtual void UpdateActive()
     {
         if (currentActiveTime >= activeTime && isActive)
         {
             isActive = false;
             currentCooldownTime = cooldownTime;
+            currentActiveTime = 0;
         }
         else if (isActive && currentCooldownTime <= cooldownTime)
         {
             currentActiveTime += Time.deltaTime;
         }
+    }
+
+    protected void SetCanMoveFalse()
+    {
+        this.gameObject.GetComponent<PlayerMovement>().canMove = false;
+    }
+
+    protected void SetCanMoveTrue()
+    {
+        this.gameObject.GetComponent<PlayerMovement>().canMove = true;
     }
 }
