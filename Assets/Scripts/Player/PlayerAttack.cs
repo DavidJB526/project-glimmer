@@ -32,7 +32,10 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void DamageEnemy()
+    /// <summary>
+    /// This function will go on Animation Events at the point in which the Player deals damage
+    /// </summary>
+    private void DamageEnemy(float damage)
     {
         RaycastHit hitInfo;
 
