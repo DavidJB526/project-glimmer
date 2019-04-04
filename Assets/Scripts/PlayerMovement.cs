@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject cm_MainCamera;
     [SerializeField]
-    private GameObject cm_SlashCamera;
-    [SerializeField]
     private float rotateSpeed;
 
     private Animator anim;
@@ -57,28 +55,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rotate()
     {
-
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0 || anim.GetBool("SlashMode"))
         {
-            
-            if (canMove && !anim.GetBool("SlashMode"))
+            if (canMove)
             {
                 //look with Camera
-                transform.rotation = Quaternion.LookRotation(cm_MainCamera.transform.forward, cm_MainCamera.transform.up);
+                transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);
                 //lock rotation to only the Y axis
                 transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
             }   
         }
-
-
-        if (anim.GetBool("SlashMode"))
-        {
-            //transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * rotateSpeed);
-            //look with Camera
-            transform.rotation = Quaternion.LookRotation(cm_SlashCamera.transform.forward, cm_SlashCamera.transform.up);
-            //lock rotation to only the Y axis
-            transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
-        }
-
     }
 }
