@@ -28,14 +28,14 @@ public class PlayerAbility_SlashAttack : PlayerAbility
             isActive = true;
         }
 
-        if (Input.GetButtonDown("Fire1") && isActive)
+        if (Input.GetButtonDown("Light Attack") && isActive)
         {
-            anim.SetTrigger("Attack");
+            anim.SetTrigger("LightAttack");
         }
-        else if (!isActive)
-        {
-            anim.ResetTrigger("Attack");
-        }
+        //else if (!isActive)
+        //{
+        //    anim.ResetTrigger("LightAttack");
+        //}
 
         anim.SetBool("SlashMode", isActive);
 
@@ -51,6 +51,6 @@ public class PlayerAbility_SlashAttack : PlayerAbility
 
         slashClone = Instantiate(slashObject, slashSpawner.position, slashSpawner.rotation * Quaternion.Euler(0, 0, angle)) as Rigidbody;
         slashClone.velocity = slashSpawner.forward * slashSpeed;
-        anim.ResetTrigger("Slash Attack");
+        anim.ResetTrigger("LightAttack");
     }
 }

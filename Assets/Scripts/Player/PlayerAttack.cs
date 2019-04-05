@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
+    private Transform raycastOrigin;
+    [SerializeField]
     private float attackDistance = 5;
     [SerializeField]
     private float raycastRadius = 2;
@@ -39,6 +41,14 @@ public class PlayerAttack : MonoBehaviour
     {
         RaycastHit hitInfo;
 
-        Physics.SphereCast(transform.position, raycastRadius, transform.forward, out hitInfo, attackDistance, playerLayer);
+        if (Physics.SphereCast(raycastOrigin.position, raycastRadius, raycastOrigin.forward, out hitInfo, attackDistance, playerLayer))
+        {
+            Debug.Log($"Hit: {hitInfo.collider.tag}");
+
+            if (hitInfo.collider.CompareTag("Enemy"))
+            {
+
+            }
+        }
     }
 }
