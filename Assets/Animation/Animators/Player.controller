@@ -3437,7 +3437,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cfd8bde891e915e40a01336a127938c0, type: 3}
+  m_Motion: {fileID: 7400000, guid: 392b14e750cf6d44c954f895b25d1e60, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -3916,7 +3916,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AttackTreeL
+  m_Name: AttackTree
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102730198921769966}
