@@ -30,7 +30,7 @@ public class PlayerAbility_Shield : PlayerAbility
             isShielded = true;
             isActive = true;
             currentActiveTime = currentCooldownTime;
-            SetCanMoveFalse();
+            //SetCanMoveFalse();
         }
         else if (!onCooldown && (Input.GetButtonUp("Shield") || Input.GetButton("Slam Attack")))
         {

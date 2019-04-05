@@ -1835,10 +1835,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownSlider: {fileID: 0}
   cooldownText: {fileID: 0}
-  cooldownTime: 10
+  cooldownTime: 5
   activeSlider: {fileID: 0}
   activeText: {fileID: 0}
-  activeTime: 10
+  activeTime: 5
   currentCooldownTime: 0
 --- !u!114 &997929996
 MonoBehaviour:

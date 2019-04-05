@@ -15,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private GameObject cm_MainCamera;
-    [SerializeField]
-    private float rotateSpeed;
 
     private Animator anim;
     private Rigidbody rb;
@@ -29,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         canMove = true;
-        //direction = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical")));
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

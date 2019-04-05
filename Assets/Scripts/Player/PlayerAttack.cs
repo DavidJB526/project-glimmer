@@ -39,13 +39,25 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     private void DamageEnemy(float damage)
     {
-        RaycastHit hitInfo;
+        RaycastHit[] hitInfo;
 
-        if (Physics.SphereCast(raycastOrigin.position, raycastRadius, raycastOrigin.forward, out hitInfo, attackDistance, playerLayer))
+        //if (Physics.SphereCast(raycastOrigin.position, raycastRadius, raycastOrigin.forward, out hitInfo, attackDistance, playerLayer))
+        //{
+        //    Debug.Log($"Hit: {hitInfo.collider.tag}");
+
+        //    if (hitInfo.collider.CompareTag("Enemy"))
+        //    {
+
+        //    }
+        //}
+
+        hitInfo = Physics.SphereCastAll(raycastOrigin.position, raycastRadius, raycastOrigin.forward, attackDistance, playerLayer);
+
+        foreach(RaycastHit raycastHit in hitInfo)
         {
-            Debug.Log($"Hit: {hitInfo.collider.tag}");
+            Debug.Log($"Hit: {raycastHit.collider.name}. Dealt {damage} Damage.");
 
-            if (hitInfo.collider.CompareTag("Enemy"))
+            if (raycastHit.collider.CompareTag("Enemy"))
             {
 
             }
