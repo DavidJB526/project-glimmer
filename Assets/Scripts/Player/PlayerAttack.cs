@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * attackDistance, Color.magenta);
+        Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * attackDistance, Color.magenta);
 
         if (Input.GetButtonDown("Light Attack"))
         {
