@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37f5c3dfc668cad4986f2c4007b46617
+guid: b58238e9336fe5145a632545fe278a92
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -36,48 +36,39 @@ ModelImporter:
     100060: LeftToeBase
     100062: LeftUpLeg
     100064: Neck
-    100066: Paladin_J_Nordstrom
-    100068: Paladin_J_Nordstrom_Helmet
-    100070: Paladin_J_Nordstrom_Shield
-    100072: Paladin_J_Nordstrom_Sword
-    100074: //RootNode
-    100076: PushbackArea
-    100078: RaycastOrigin
-    100080: RightArm
-    100082: RightFoot
-    100084: RightForeArm
-    100086: RightHand
-    100088: RightHandIndex1
-    100090: RightHandIndex2
-    100092: RightHandIndex3
-    100094: RightHandIndex4
-    100096: RightHandMiddle1
-    100098: RightHandMiddle2
-    100100: RightHandMiddle3
-    100102: RightHandMiddle4
-    100104: RightHandPinky1
-    100106: RightHandPinky2
-    100108: RightHandPinky3
-    100110: RightHandPinky4
-    100112: RightHandRing1
-    100114: RightHandRing2
-    100116: RightHandRing3
-    100118: RightHandRing4
-    100120: RightHandThumb1
-    100122: RightHandThumb2
-    100124: RightHandThumb3
-    100126: RightHandThumb4
-    100128: RightLeg
-    100130: RightShoulder
-    100132: RightToe_End
-    100134: RightToeBase
-    100136: RightUpLeg
-    100138: Shield
-    100140: Shield_joint
-    100142: Spine
-    100144: Spine1
-    100146: Spine2
-    100148: Sword_joint
+    100066: //RootNode
+    100068: RightArm
+    100070: RightFoot
+    100072: RightForeArm
+    100074: RightHand
+    100076: RightHandIndex1
+    100078: RightHandIndex2
+    100080: RightHandIndex3
+    100082: RightHandIndex4
+    100084: RightHandMiddle1
+    100086: RightHandMiddle2
+    100088: RightHandMiddle3
+    100090: RightHandMiddle4
+    100092: RightHandPinky1
+    100094: RightHandPinky2
+    100096: RightHandPinky3
+    100098: RightHandPinky4
+    100100: RightHandRing1
+    100102: RightHandRing2
+    100104: RightHandRing3
+    100106: RightHandRing4
+    100108: RightHandThumb1
+    100110: RightHandThumb2
+    100112: RightHandThumb3
+    100114: RightHandThumb4
+    100116: RightLeg
+    100118: RightShoulder
+    100120: RightToe_End
+    100122: RightToeBase
+    100124: RightUpLeg
+    100126: Spine
+    100128: Spine1
+    100130: Spine2
     400000: Head
     400002: HeadTop_End
     400004: Hips
@@ -111,99 +102,41 @@ ModelImporter:
     400060: LeftToeBase
     400062: LeftUpLeg
     400064: Neck
-    400066: Paladin_J_Nordstrom
-    400068: Paladin_J_Nordstrom_Helmet
-    400070: Paladin_J_Nordstrom_Shield
-    400072: Paladin_J_Nordstrom_Sword
-    400074: //RootNode
-    400076: PushbackArea
-    400078: RaycastOrigin
-    400080: RightArm
-    400082: RightFoot
-    400084: RightForeArm
-    400086: RightHand
-    400088: RightHandIndex1
-    400090: RightHandIndex2
-    400092: RightHandIndex3
-    400094: RightHandIndex4
-    400096: RightHandMiddle1
-    400098: RightHandMiddle2
-    400100: RightHandMiddle3
-    400102: RightHandMiddle4
-    400104: RightHandPinky1
-    400106: RightHandPinky2
-    400108: RightHandPinky3
-    400110: RightHandPinky4
-    400112: RightHandRing1
-    400114: RightHandRing2
-    400116: RightHandRing3
-    400118: RightHandRing4
-    400120: RightHandThumb1
-    400122: RightHandThumb2
-    400124: RightHandThumb3
-    400126: RightHandThumb4
-    400128: RightLeg
-    400130: RightShoulder
-    400132: RightToe_End
-    400134: RightToeBase
-    400136: RightUpLeg
-    400138: Shield
-    400140: Shield_joint
-    400142: Spine
-    400144: Spine1
-    400146: Spine2
-    400148: Sword_joint
-    2100000: Paladin_MAT
-    2100002: DefaultHDMaterial
-    2300000: Shield
-    3300000: Shield
-    4300000: Paladin_J_Nordstrom
-    4300002: Paladin_J_Nordstrom_Helmet
-    4300004: Paladin_J_Nordstrom_Shield
-    4300006: Paladin_J_Nordstrom_Sword
-    4300008: Shield
-    7400000: Idle
-    7400002: Slam_Edit
-    7400004: idle
-    7400006: standard run
-    7400008: walking
-    7400010: left strafe
-    7400012: left strafe walking
-    7400014: right strafe
-    7400016: right strafe walking
-    7400018: Run_Back
-    7400020: Walk_Back
-    7400022: BlockCrouch_Edit
-    7400024: Walk
-    7400026: Slash_Edit
-    7400028: BackSlash_Edit
-    7400030: JumpSlash_Edit
-    7400032: JumpSlashCombo_Edit
-    7400034: StandingMeleeRunJumpAttack_Edit
-    7400036: HeavySpinSlash_Edit
-    7400038: SpinSlash_Edit
-    7400040: TwoHandSpinAttack_Edit
-    7400042: TwoHandSlash_Edit
-    7400044: TwoHandSlideAttack_Edit
-    7400046: TwoHandLowSlash_Edit
-    7400048: TwoHandJumpAttack_Edit
-    7400050: TwoHandBackSlash_Edit
-    7400052: TwoHandSpinCombo_Edit
-    7400054: TwoHandSlash
-    7400056: TwoHandLowSlash
-    7400058: TwoHandBackSlash
-    7400060: TwoHandJumpAttack
-    7400062: TwoHandSpinCombo
-    7400064: TwoHandSlideAttack
-    7400066: TwoHandSpinAttack
-    7400068: Block_Edit
-    7400070: Slash_SpawnEdit
-    7400072: Slash_Edit2
+    400066: //RootNode
+    400068: RightArm
+    400070: RightFoot
+    400072: RightForeArm
+    400074: RightHand
+    400076: RightHandIndex1
+    400078: RightHandIndex2
+    400080: RightHandIndex3
+    400082: RightHandIndex4
+    400084: RightHandMiddle1
+    400086: RightHandMiddle2
+    400088: RightHandMiddle3
+    400090: RightHandMiddle4
+    400092: RightHandPinky1
+    400094: RightHandPinky2
+    400096: RightHandPinky3
+    400098: RightHandPinky4
+    400100: RightHandRing1
+    400102: RightHandRing2
+    400104: RightHandRing3
+    400106: RightHandRing4
+    400108: RightHandThumb1
+    400110: RightHandThumb2
+    400112: RightHandThumb3
+    400114: RightHandThumb4
+    400116: RightLeg
+    400118: RightShoulder
+    400120: RightToe_End
+    400122: RightToeBase
+    400124: RightUpLeg
+    400126: Spine
+    400128: Spine1
+    400130: Spine2
+    7400000: mixamo.com
     9500000: //RootNode
-    13700000: Paladin_J_Nordstrom
-    13700002: Paladin_J_Nordstrom_Helmet
-    13700004: Paladin_J_Nordstrom_Shield
-    13700006: Paladin_J_Nordstrom_Sword
   externalObjects: {}
   materials:
     importMaterials: 1
