@@ -36,7 +36,7 @@ public class PlayerAbility_Shield : PlayerAbility
         {
             isShielded = false;
             //isActive = false;
-            currentCooldownTime = cooldownTime - ((Mathf.Round(activeTime - currentActiveTime) * 10) / 10);
+            currentCooldownTime = currentActiveTime;//cooldownTime - ((Mathf.Round(activeTime - currentActiveTime) * 10) / 10);
         }
         else if (currentActiveTime <= 0)
         {
