@@ -13,9 +13,6 @@ using UnityEngine;
 //This script goes on the player
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject cm_MainCamera;
-
     private Animator anim;
     private Rigidbody rb;
     public bool canMove;
