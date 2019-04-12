@@ -9,6 +9,10 @@ public class PlayerAbility_SlashAttack : PlayerAbility
     private Rigidbody slashObject;
     [SerializeField]
     private Transform slashSpawner;
+    [SerializeField]
+    private GameObject targetReticule;
+    [SerializeField]
+    private GameObject swordTwo;
 
     [SerializeField]
     private float slashSpeed;
@@ -38,6 +42,10 @@ public class PlayerAbility_SlashAttack : PlayerAbility
         //}
 
         anim.SetBool("SlashMode", isActive);
+
+        targetReticule.SetActive(isActive);
+        swordTwo.SetActive(isActive);
+
 
         UpdateActive();
         UpdateActiveUI();
