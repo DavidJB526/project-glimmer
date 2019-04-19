@@ -16,63 +16,7 @@ MonoBehaviour:
   - {fileID: 114230644980889130}
   - {fileID: 114799564733977650}
   - {fileID: 114914622900661484}
-  - {fileID: 114142664384578052}
---- !u!114 &114142664384578052
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2150ee00179b2f4418ea8b21a7e98eea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 0
-  colorMode:
-    m_OverrideState: 1
-    m_Value: 1
-  color:
-    m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 1
-    showAlpha: 0
-    showEyeDropper: 1
-  density:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-    max: 1
-  maxFogDistance:
-    m_OverrideState: 1
-    m_Value: 5000
-    min: 0
-  mipFogMaxMip:
-    m_OverrideState: 1
-    m_Value: 0.5
-    min: 0
-    max: 1
-  mipFogNear:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-  mipFogFar:
-    m_OverrideState: 1
-    m_Value: 1000
-    min: 0
-  fogDistance:
-    m_OverrideState: 1
-    m_Value: 200
-    min: 0
-  fogBaseHeight:
-    m_OverrideState: 1
-    m_Value: 0
-  fogHeightAttenuation:
-    m_OverrideState: 1
-    m_Value: 0.2
-    min: 0
-    max: 1
+  - {fileID: 114400086042411664}
 --- !u!114 &114230644980889130
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -126,6 +70,80 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
     min: 0
+--- !u!114 &114400086042411664
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b00527f85bb3346a4d2cb710971587, type: 3}
+  m_Name: VolumetricFog
+  m_EditorClassIdentifier: 
+  active: 1
+  colorMode:
+    m_OverrideState: 0
+    m_Value: 1
+  color:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 1
+    showAlpha: 0
+    showEyeDropper: 1
+  density:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  maxFogDistance:
+    m_OverrideState: 0
+    m_Value: 5000
+    min: 0
+  mipFogMaxMip:
+    m_OverrideState: 0
+    m_Value: 0.5
+    min: 0
+    max: 1
+  mipFogNear:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  mipFogFar:
+    m_OverrideState: 0
+    m_Value: 1000
+    min: 0
+  albedo:
+    m_OverrideState: 1
+    m_Value: {r: 0.6792453, g: 0.55296475, b: 0.36205056, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  meanFreePath:
+    m_OverrideState: 1
+    m_Value: 1000000
+    min: 1
+  baseHeight:
+    m_OverrideState: 1
+    m_Value: 1
+  meanHeight:
+    m_OverrideState: 1
+    m_Value: 4.5
+    min: 1
+  anisotropy:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -1
+    max: 1
+  globalLightProbeDimmer:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  enableDistantFog:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &114799564733977650
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -143,8 +161,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 3
   fogType:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 3
 --- !u!114 &114914622900661484
 MonoBehaviour:
   m_ObjectHideFlags: 3
