@@ -10,14 +10,14 @@ public class AIController : MonoBehaviour
     [SerializeField]
     private float lookRadius = 10f;
 
-    private AICombat combat;
+    //private AICombat combat;
     private Animator anim;
     private Transform target;
     private NavMeshAgent agent;
 
     private void Awake()
     {
-        combat = GetComponent<AICombat>();
+        //combat = GetComponent<AICombat>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -34,24 +34,25 @@ public class AIController : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
+            agent.destination = target.position;
 
             anim.SetBool("chasePlayer", true);
 
             if (distance <= agent.stoppingDistance)
             {
-                MeleeAttack();
+                //MeleeAttack();
 
-                CharacterStats targetStats = target.GetComponent<CharacterStats>();
-                if (targetStats != null)
-                {
-                    combat.Attack(targetStats);
-                }
+                //CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                //if (targetStats != null)
+                //{
+                //    combat.Attack(targetStats);
+                //}
 
                 FaceTarget();
             }
             else
             {
-                anim.SetBool("chasePlayer", false);
+                anim.ResetTrigger("attackPlayer");
             }
         }
     }
