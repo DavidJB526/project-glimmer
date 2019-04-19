@@ -20,6 +20,10 @@ public class AIController : MonoBehaviour
         combat = GetComponent<AICombat>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
         target = PlayerManager.instance.player.transform;
     }
 
@@ -31,22 +35,23 @@ public class AIController : MonoBehaviour
         {
             agent.SetDestination(target.position);
 
-            //anim.SetBool("ChasePlayer", true);
+            anim.SetBool("chasePlayer", true);
 
             if (distance <= agent.stoppingDistance)
             {
+                MeleeAttack();
+
                 CharacterStats targetStats = target.GetComponent<CharacterStats>();
                 if (targetStats != null)
                 {
                     combat.Attack(targetStats);
                 }
-                //anim.SetBool("ChasePlayer", true);
+
                 FaceTarget();
-                //anim.SetBool("ChasePlayer", false);
             }
             else
             {
-                //anim.SetBool("ChasePlayer", false);
+                anim.SetBool("chasePlayer", false);
             }
         }
     }
@@ -56,6 +61,18 @@ public class AIController : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+    }
+
+    private void MeleeAttack()
+    {
+        anim.SetBool("chasePlayer", false);
+        anim.SetTrigger("attackPlayer");
+    }
+
+    //This method is called through an event on the AI's respective "Death" Animation
+    private void RemoveCreature()
+    {
+        Destroy(gameObject);
     }
 
     /// <summary>
