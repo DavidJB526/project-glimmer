@@ -40,7 +40,7 @@ public class AIController : MonoBehaviour
     {
         direction = (target.position - transform.position).normalized;
         float distance = Vector3.Distance(target.position, transform.position);
-        float angle = Vector3.Angle(direction, transform.position);
+        float angle = Vector3.Angle(direction, transform.forward);
 
         if ((distance <= maxLookRadius && angle < 30) || distance <= minLookRadius)
         {

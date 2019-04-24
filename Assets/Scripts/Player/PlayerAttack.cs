@@ -59,7 +59,16 @@ public class PlayerAttack : MonoBehaviour
 
             if (raycastHit.collider.CompareTag("Enemy"))
             {
+                AIHealth aiHealth = raycastHit.collider.GetComponent<AIHealth>();
 
+                if (aiHealth != null)
+                {
+                    aiHealth.TakeDamage(damage);
+                }
+                else
+                {
+                    Debug.Log("Enemy does not have an AIHealth script.");
+                }
             }
         }
     }
