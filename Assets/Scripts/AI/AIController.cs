@@ -8,12 +8,16 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour
 {
     [SerializeField]
-    private float lookRadius = 10f;
+    private float maxLookRadius = 10f;
+    [SerializeField]
+    private float minLookRadius = 5f;
 
     //private AICombat combat;
     private Animator anim;
     private Transform target;
     private NavMeshAgent agent;
+
+    private Vector3 direction;
 
     private void Awake()
     {
@@ -29,45 +33,44 @@ public class AIController : MonoBehaviour
 
     private void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        UpdateAIBehavior();
+    }
 
-        if (distance <= lookRadius)
+    private void UpdateAIBehavior()
+    {
+        direction = (target.position - transform.position).normalized;
+        float distance = Vector3.Distance(target.position, transform.position);
+        float angle = Vector3.Angle(direction, transform.position);
+
+        if ((distance <= maxLookRadius && angle < 30) || distance <= minLookRadius)
         {
             agent.SetDestination(target.position);
             agent.destination = target.position;
 
-            anim.SetBool("chasePlayer", true);
-
             if (distance <= agent.stoppingDistance)
             {
-                //MeleeAttack();
-
-                //CharacterStats targetStats = target.GetComponent<CharacterStats>();
-                //if (targetStats != null)
-                //{
-                //    combat.Attack(targetStats);
-                //}
-
+                anim.SetBool("chasePlayer", false);
+                MeleeAttack();
                 FaceTarget();
             }
             else
             {
+                anim.SetBool("chasePlayer", true);
                 anim.ResetTrigger("attackPlayer");
             }
         }
-    }
-
-    private void FaceTarget()
-    {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
 
     private void MeleeAttack()
     {
         anim.SetBool("chasePlayer", false);
         anim.SetTrigger("attackPlayer");
+    }
+
+    private void FaceTarget()
+    {
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
 
     //This method is called through an event on the AI's respective "Death" Animation
@@ -86,8 +89,10 @@ public class AIController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, maxLookRadius);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.DrawWireSphere(transform.position, minLookRadius);
     }
 
 }
