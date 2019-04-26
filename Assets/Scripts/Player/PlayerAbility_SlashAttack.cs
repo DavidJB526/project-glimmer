@@ -19,6 +19,11 @@ public class PlayerAbility_SlashAttack : PlayerAbility
 
     private Animator anim;
 
+    private void Awake()
+    {
+        targetReticule.SetActive(false);
+    }
+
     private void Start()
     {
         anim = GetComponent<Animator>();

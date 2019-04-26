@@ -2925,7 +2925,7 @@ GameObject:
   - component: {fileID: 1476571397}
   - component: {fileID: 6883060942468357003}
   m_Layer: 9
-  m_Name: PushbackArea
+  m_Name: SlamArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2971,6 +2971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushbackForce: 400
+  damage: 20
 --- !u!1 &1508835591
 GameObject:
   m_ObjectHideFlags: 0

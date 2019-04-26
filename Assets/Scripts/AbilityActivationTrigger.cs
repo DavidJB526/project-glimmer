@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class AbilityActivationTrigger : MonoBehaviour
@@ -14,26 +13,42 @@ public class AbilityActivationTrigger : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI instructionText;
 
-    private Text testText;
-
     [SerializeField]
     [TextArea(3, 8)]
-    private string instructions;
+    private string controllerInstructions;
+    [SerializeField]
+    [TextArea(3, 8)]
+    private string keyboardInstructions;
+
+    private BoxCollider boxCollider;
 
     private void Awake()
     {
+        boxCollider = GetComponent<BoxCollider>();
+        instructionText.CrossFadeAlpha(0, 0, true);
+    }
+
+    private void Start()
+    {
         abilityScript.enabled = false;
         abilityCanvas.SetActive(false);
-        instructionText.CrossFadeAlpha(0, 0, true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            boxCollider.enabled = false;
             abilityScript.enabled = true;
             abilityCanvas.SetActive(true);
-            instructionText.text = instructions;
+            if (Input.GetJoystickNames().Length > 0)
+            {
+                instructionText.text = controllerInstructions;
+            }
+            else
+            {
+                instructionText.text = keyboardInstructions;
+            }
             StartCoroutine(FadeTextInAndOut());
         }
     }
