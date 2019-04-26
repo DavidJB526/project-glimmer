@@ -19,9 +19,9 @@ public class SlashScript : MonoBehaviour
             //Deal Damage here
             Destroy(other.gameObject);
         }
-        else if(other.tag != "Player")
-        {
-            Destroy(gameObject);
-        }        
+        //else if(other.tag != "Player")
+        //{
+        //    Destroy(gameObject);
+        //}        
     }
 }
