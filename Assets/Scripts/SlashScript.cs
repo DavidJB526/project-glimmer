@@ -16,9 +16,9 @@ public class SlashScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
-            AIHealth aiHealth = other.GetComponent<AIHealth>();
+            AIHealth aiHealth = other.gameObject.GetComponent<AIHealth>();
 
             if (aiHealth != null)
             {
@@ -29,7 +29,7 @@ public class SlashScript : MonoBehaviour
                 Debug.Log("Enemy does not have an AIHealth script.");
             }
         }
-        else if (other.tag != "Player" && other.isTrigger == false)
+        else if (other.gameObject.tag != "Player" && other.isTrigger == false)
         {
             Destroy(gameObject);
         }

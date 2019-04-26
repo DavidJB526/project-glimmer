@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushbackArea : MonoBehaviour
+public class SlamArea : MonoBehaviour
 {
     [SerializeField]
     private float pushbackForce;
@@ -11,9 +11,11 @@ public class PushbackArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        Debug.Log($"Hit tag: {other.tag}");
+
+        if (other.gameObject.tag == "Enemy")
         {
-            AIHealth aiHealth = other.GetComponent<AIHealth>();
+            AIHealth aiHealth = other.gameObject.GetComponent<AIHealth>();
 
             if (aiHealth != null)
             {
