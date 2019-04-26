@@ -8,6 +8,8 @@ public class AIHealth : MonoBehaviour
     [SerializeField]
     private float health;
 
+    public bool tookDamage;
+
     private Animator anim;
 
     private void Awake()
@@ -27,6 +29,7 @@ public class AIHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        tookDamage = true;
         health -= damage;
         anim.SetTrigger("flinch");
     }

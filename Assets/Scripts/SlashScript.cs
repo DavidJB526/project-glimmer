@@ -6,6 +6,8 @@ public class SlashScript : MonoBehaviour
 {
     [SerializeField]
     private float lifetime = 3f;
+    [SerializeField]
+    private float damage;
 
     void Start()
     {
@@ -16,12 +18,20 @@ public class SlashScript : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            //Deal Damage here
-            Destroy(other.gameObject);
+            AIHealth aiHealth = other.GetComponent<AIHealth>();
+
+            if (aiHealth != null)
+            {
+                aiHealth.TakeDamage(damage);
+            }
+            else
+            {
+                Debug.Log("Enemy does not have an AIHealth script.");
+            }
         }
-        //else if(other.tag != "Player")
-        //{
-        //    Destroy(gameObject);
-        //}        
+        else if (other.tag != "Player" && other.isTrigger == false)
+        {
+            Destroy(gameObject);
+        }
     }
 }

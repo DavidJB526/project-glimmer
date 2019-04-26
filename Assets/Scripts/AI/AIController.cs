@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(AIHealth))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIController : MonoBehaviour
@@ -12,7 +13,7 @@ public class AIController : MonoBehaviour
     [SerializeField]
     private float minLookRadius = 5f;
 
-    //private AICombat combat;
+    private AIHealth aiHealth;
     private Animator anim;
     private Transform target;
     private NavMeshAgent agent;
@@ -21,7 +22,7 @@ public class AIController : MonoBehaviour
 
     private void Awake()
     {
-        //combat = GetComponent<AICombat>();
+        aiHealth = GetComponent<AIHealth>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -58,6 +59,11 @@ public class AIController : MonoBehaviour
                 anim.SetBool("chasePlayer", true);
                 anim.ResetTrigger("attackPlayer");
             }
+        }
+        else if (aiHealth.tookDamage)
+        {
+            agent.SetDestination(target.position);
+            anim.SetBool("chasePlayer", true);
         }
     }
 
