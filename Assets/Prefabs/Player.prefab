@@ -2185,6 +2185,8 @@ GameObject:
   - component: {fileID: 249684356}
   - component: {fileID: 997929996}
   - component: {fileID: 1584387127}
+  - component: {fileID: 3439233247765179104}
+  - component: {fileID: 2477291027400277655}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2371,6 +2373,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordRight: {fileID: 1270530047}
   swordLeft: {fileID: 1379023392}
+--- !u!114 &3439233247765179104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259210829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4079af2b3667a4ebaa4e0d2e18c1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastOrigin: {fileID: 0}
+  maxDetectRange: 6
+  layerToIgnore: 9
+--- !u!114 &2477291027400277655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259210829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9001b18515e17479c6ddf32bf41a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1270530047
 GameObject:
   m_ObjectHideFlags: 0
