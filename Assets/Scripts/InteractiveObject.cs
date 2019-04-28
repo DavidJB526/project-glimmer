@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class InteractiveObject : MonoBehaviour, IInteractive
 {
     [SerializeField]
@@ -14,12 +13,12 @@ public class InteractiveObject : MonoBehaviour, IInteractive
 
     protected virtual void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void InteractWith()
     {
         Debug.Log($"Player just interacted with {gameObject.name}");
-        audioSource.Play();
+        //audioSource.Play();
     }
 }

@@ -46,7 +46,6 @@ public class AIController : MonoBehaviour
         if ((distance <= maxLookRadius && angle < 30) || distance <= minLookRadius)
         {
             agent.SetDestination(target.position);
-            agent.destination = target.position;
 
             if (distance <= agent.stoppingDistance)
             {
@@ -88,10 +87,10 @@ public class AIController : MonoBehaviour
     /// <summary>
     /// Sets NavMeshAgent velocity to be the same as the Root Motion of the Animations
     /// </summary>
-    //private void OnAnimatorMove()
-    //{
-    //    agent.velocity = anim.deltaPosition / Time.deltaTime;
-    //}
+    private void OnAnimatorMove()
+    {
+        agent.speed = (anim.deltaPosition / Time.deltaTime).magnitude;
+    }
 
     private void OnDrawGizmosSelected()
     {
