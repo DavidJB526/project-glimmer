@@ -41,16 +41,6 @@ public class PlayerAttack : MonoBehaviour
     {
         RaycastHit[] hitInfo;
 
-        //if (Physics.SphereCast(raycastOrigin.position, raycastRadius, raycastOrigin.forward, out hitInfo, attackDistance, playerLayer))
-        //{
-        //    Debug.Log($"Hit: {hitInfo.collider.tag}");
-
-        //    if (hitInfo.collider.CompareTag("Enemy"))
-        //    {
-
-        //    }
-        //}
-
         hitInfo = Physics.SphereCastAll(raycastOrigin.position, raycastRadius, raycastOrigin.forward, attackDistance, playerLayer);
 
         foreach(RaycastHit raycastHit in hitInfo)
@@ -71,5 +61,17 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// This would be called in the Animator to rotate towards camera at start of animation.
+    /// Probably not the best way to do this, currenlty excluded.
+    /// </summary>
+    private void RotateWithAttack()
+    {
+        //look with Camera
+        transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);
+        //lock rotation to only the Y axis
+        transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
     }
 }

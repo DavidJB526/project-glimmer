@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// This UI text displays info about the currenlty looked at interactive IInteractive.
@@ -10,11 +11,11 @@ using UnityEngine.UI;
 public class LookedAtInteractiveDisplayText : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;
-    private Text displayText;
+    private TextMeshProUGUI displayText;
 
     private void Awake()
     {
-        displayText = this.gameObject.GetComponent<Text>();
+        displayText = this.gameObject.GetComponent<TextMeshProUGUI>();
         UpdateDisplayText();
     }
 

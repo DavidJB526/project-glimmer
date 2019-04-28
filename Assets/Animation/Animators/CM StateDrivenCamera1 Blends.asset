@@ -36,7 +36,7 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: '**ANY CAMERA**'
-    m_To: CM_MainCamera
+    m_To: CM_MainCamera_FL
     m_Blend:
       m_Style: 1
       m_Time: 1
