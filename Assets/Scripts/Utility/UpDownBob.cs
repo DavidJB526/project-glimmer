@@ -11,6 +11,6 @@ public class UpDownBob : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.parent.position.y, transform.parent.position.y + height, Mathf.PingPong(Time.time * speed, 1)), 0);
+        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.parent.position.y, transform.parent.position.y + height, Mathf.PingPong(Time.time * speed, 1)), transform.position.z);
     }
 }
