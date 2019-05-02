@@ -39,8 +39,14 @@ public class AbilityActivationTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             boxCollider.enabled = false;
+            if (abilityScript != null)
+            {
             abilityScript.enabled = true;
+            }
+            if (abilityCanvas != null)
+            {
             abilityCanvas.SetActive(true);
+            }
             if (Input.GetJoystickNames().Length > 0)
             {
                 instructionText.text = controllerInstructions;
