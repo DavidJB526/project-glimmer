@@ -27,7 +27,7 @@ public class SlamArea : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag != "Player" /*other.CompareTag("Player")*/)
+        if (other.gameObject.tag != "Player" && !other.isTrigger)
         {
             if(other.gameObject.GetComponent<Rigidbody>() != null)
             {
