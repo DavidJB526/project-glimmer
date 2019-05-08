@@ -3813,6 +3813,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1289211122}
     m_Modifications:
+    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
       propertyPath: m_Name
       value: Magic_Sword_03
@@ -3832,14 +3840,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3928,6 +3928,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1863701271}
     m_Modifications:
+    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
       propertyPath: m_Name
       value: Magic_Sword_03
@@ -3947,14 +3955,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: df0be432df4b28b449c7bfc7c01a0c4c, type: 3}
       propertyPath: m_LocalPosition.x

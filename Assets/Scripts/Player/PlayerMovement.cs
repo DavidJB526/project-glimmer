@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Dodge();
     }
 
     private void Move()
@@ -45,6 +46,14 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("MoveVertical", Input.GetAxis("Vertical"));
         //adjusts the float value for "MoveX" denoted in the attached Animator based on Horizontal input
         anim.SetFloat("MoveHorizontal", Input.GetAxis("Horizontal"));
+    }
+
+    private void Dodge()
+    {
+        if (Input.GetButtonDown("Dodge"))
+        {
+            anim.SetTrigger("Dodge");
+        }
     }
 
     private void Rotate()
