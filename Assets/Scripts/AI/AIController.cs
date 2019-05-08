@@ -12,6 +12,8 @@ public class AIController : MonoBehaviour
     private float maxLookRadius = 10f;
     [SerializeField]
     private float minLookRadius = 5f;
+    [SerializeField]
+    private bool useRootMotion;
 
     private AIHealth aiHealth;
     private Animator anim;
@@ -89,7 +91,10 @@ public class AIController : MonoBehaviour
     /// </summary>
     private void OnAnimatorMove()
     {
-        agent.speed = (anim.deltaPosition / Time.deltaTime).magnitude;
+        if (useRootMotion)
+        {
+            agent.speed = (anim.deltaPosition / Time.deltaTime).magnitude;
+        }
     }
 
     private void OnDrawGizmosSelected()

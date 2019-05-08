@@ -19,8 +19,6 @@ public class AIHealth : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Health: " + health);
-
         if (health <= 0)
         {
             anim.SetBool("isDead", true);
