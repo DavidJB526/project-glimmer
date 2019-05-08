@@ -29,7 +29,7 @@ public class SlashScript : MonoBehaviour
                 Debug.Log("Enemy does not have an AIHealth script.");
             }
         }
-        else if (other.gameObject.tag != "Player" && other.isTrigger == false)
+        else if (other.gameObject.tag != "Player" && !other.isTrigger)
         {
             Destroy(gameObject);
         }
