@@ -47,7 +47,8 @@ public class DetectLookedAtInteractive : MonoBehaviour
         Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * maxDetectRange, Color.green);
 
         RaycastHit hitInfo;
-        bool objectDetected = Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hitInfo, maxDetectRange, layerToIgnore);
+        //bool objectDetected = Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hitInfo, maxDetectRange, layerToIgnore);
+        bool objectDetected = Physics.SphereCast(raycastOrigin.position, 0.1f, raycastOrigin.forward, out hitInfo, maxDetectRange, layerToIgnore);
 
         IInteractive interactive = null;
 
