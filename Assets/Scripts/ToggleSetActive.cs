@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ToggleSetActive : InteractiveObject
 {
+    public AudioClip drillActivated;
+    public AudioSource audioSource;
+
     [System.Serializable]
     public class AnimationToTrigger
     {
         public Animator anim;
         public string animTrigger;
+        
 
         public void TriggerAnimation()
         {
@@ -33,6 +37,7 @@ public class ToggleSetActive : InteractiveObject
             base.InteractWith();
             objectToToggle.SetActive(!objectToToggle.activeSelf);
             hasBeenUsed = true;
+            audioSource.PlayOneShot(drillActivated);
             if (!isReusable)
             {
                 displayText = string.Empty;

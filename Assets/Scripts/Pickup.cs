@@ -8,12 +8,14 @@ public class Pickup : MonoBehaviour
     private ParticleSystem[] particleSystems;
     private Renderer[] renderers;
     private BoxCollider boxCollider;
+    private AudioSource audioSource;
 
     private void Start()
     {
         particleSystems = GetComponentsInChildren<ParticleSystem>();
         renderers = GetComponentsInChildren<Renderer>();
         boxCollider = GetComponent<BoxCollider>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,6 +30,7 @@ public class Pickup : MonoBehaviour
             r.enabled = false;
         }
 
+        audioSource.Play();
         boxCollider.enabled = false;
     }
 }
