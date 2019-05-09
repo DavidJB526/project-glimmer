@@ -2302,7 +2302,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.78272116, b: 0.16470587, a: 1}
-  m_Intensity: 47.746483
+  m_Intensity: 23.873241
   m_Range: 8
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2370,7 +2370,7 @@ MonoBehaviour:
   useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
-  displayLightIntensity: 600
+  displayLightIntensity: 300
   displayAreaLightEmissiveMesh: 0
   lightLayers: 1
   shadowNearPlane: 0.1
