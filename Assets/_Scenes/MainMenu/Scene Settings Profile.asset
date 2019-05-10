@@ -158,10 +158,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   skyType:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 3
   fogType:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 3
 --- !u!114 &114891764762925988
 MonoBehaviour:

@@ -21,7 +21,7 @@ MonoBehaviour:
     x: 486
     y: -472
     width: 382
-    height: 2444
+    height: 2575
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,7 +209,7 @@ VisualEffectResource:
       VFX_USE_SCALEY_CURRENT 1\n\t\t#define VFX_USE_SCALEZ_CURRENT 1\n\t\t#define
       VFX_USE_AGE_CURRENT 1\n\t\t#define VFX_BLENDMODE_ADD 1\n\t\t\n\t\t\n\t\t\n\t\t#define
       VFX_WORLD_SPACE 1\n\t\t\n\n\t\tCBUFFER_START(parameters)\n\t\t    float4 Scale_d;\n\t\t
-      \   float4 Alpha_f;\n\t\t    float gradient_e;\n\t\t    uint3 PADDING_0;\n\t\tCBUFFER_END\n\t\tTexture2D
+      \   float4 Alpha_f;\n\t\t    float Color_e;\n\t\t    uint3 PADDING_0;\n\t\tCBUFFER_END\n\t\tTexture2D
       mainTexture;\n\t\tSamplerState samplermainTexture;\n\t\t\n\n\t\t\n\t\t#define
       VFX_NEEDS_COLOR_INTERPOLATOR (VFX_USE_COLOR_CURRENT || VFX_USE_ALPHA_CURRENT)\n\t\t#define
       IS_TRANSPARENT_PARTICLE (!IS_OPAQUE_PARTICLE)\n\t\t\n\t\t#include \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/HDRP/VFXGlobalDefines.cginc\"\n\t\t\n\n\t\t\n\t\tByteAddressBuffer
@@ -252,15 +252,16 @@ VisualEffectResource:
       SampleMode:OverLife Mode:Uniform ColorMode:ColorAndAlpha channels:XYZ */\n\t\t\t{\n\t\t\t
       \   float t = age / lifetime;\n\t\t\t    float3 value = 0.0f;\n\t\t\t    value
       = SampleCurve(Scale, t);\n\t\t\t    scaleX = value.x;\n\t\t\t    scaleY = value.y;\n\t\t\t
-      \   scaleZ = value.z;\n\t\t\t}\n\t\t\tvoid ColorOverLife_26AC1(float age, float
-      lifetime, inout float3 color, float gradient) /*mode:Color ColorComposition:Multiply
-      AlphaComposition:Multiply */\n\t\t\t{\n\t\t\t    \n\t\t\t    float4 sampledColor
-      = SampleGradient(gradient, age/lifetime);\n\t\t\t    color *= sampledColor.rgb;\n\t\t\t
-      \   \n\t\t\t}\n\t\t\tvoid AttributeFromCurve_7BA3F6A(inout float alpha, float
-      age, float lifetime, float4 Alpha) /*attribute:alpha Composition:Overwrite AlphaComposition:Overwrite
-      SampleMode:OverLife Mode:PerComponent ColorMode:ColorAndAlpha channels:XYZ */\n\t\t\t{\n\t\t\t
-      \   float t = age / lifetime;\n\t\t\t    float value = 0.0f;\n\t\t\t    value
-      = SampleCurve(Alpha, t);\n\t\t\t    alpha = value;\n\t\t\t}\n\t\t\t\n\n\t\t\t\n\t\t\t#pragma
+      \   scaleZ = value.z;\n\t\t\t}\n\t\t\tvoid AttributeFromCurve_48A85E4B(inout
+      float3 color, float age, float lifetime, float Color) /*attribute:color Composition:Overwrite
+      AlphaComposition:Overwrite SampleMode:OverLife Mode:PerComponent ColorMode:Color
+      channels:XYZ */\n\t\t\t{\n\t\t\t    float t = age / lifetime;\n\t\t\t    float4
+      value = 0.0f;\n\t\t\t    value = SampleGradient(Color, t);\n\t\t\t    color
+      = value.rgb;\n\t\t\t}\n\t\t\tvoid AttributeFromCurve_7BA3F6A(inout float alpha,
+      float age, float lifetime, float4 Alpha) /*attribute:alpha Composition:Overwrite
+      AlphaComposition:Overwrite SampleMode:OverLife Mode:PerComponent ColorMode:ColorAndAlpha
+      channels:XYZ */\n\t\t\t{\n\t\t\t    float t = age / lifetime;\n\t\t\t    float
+      value = 0.0f;\n\t\t\t    value = SampleCurve(Alpha, t);\n\t\t\t    alpha = value;\n\t\t\t}\n\t\t\t\n\n\t\t\t\n\t\t\t#pragma
       vertex vert\n\t\t\tVFX_VARYING_PS_INPUTS vert(uint id : SV_VertexID, uint instanceID
       : SV_InstanceID)\n\t\t\t{\n\t\t\t\tuint index = (id >> 2) + instanceID * 2048;\n\t\t\t\tVFX_VARYING_PS_INPUTS
       o = (VFX_VARYING_PS_INPUTS)0;\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\tuint deadCount
@@ -298,8 +299,8 @@ VisualEffectResource:
       \   SetAttribute_3278B22F( /*inout */size, (float)0.3);\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t
       \   SetAttribute_D5151642( /*inout */scaleX,  /*inout */scaleY,  /*inout */scaleZ,
       float3(0.3,0.42,0.44));\n\t\t\t\t}\n\t\t\t\tAttributeFromCurve_5369138D( /*inout
-      */scaleX,  /*inout */scaleY,  /*inout */scaleZ, age, lifetime, Scale_d);\n\t\t\t\tColorOverLife_26AC1(age,
-      lifetime,  /*inout */color, gradient_e);\n\t\t\t\tAttributeFromCurve_7BA3F6A(
+      */scaleX,  /*inout */scaleY,  /*inout */scaleZ, age, lifetime, Scale_d);\n\t\t\t\tAttributeFromCurve_48A85E4B(
+      /*inout */color, age, lifetime, Color_e);\n\t\t\t\tAttributeFromCurve_7BA3F6A(
       /*inout */alpha, age, lifetime, Alpha_f);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t\tif
       (!alive)\n\t\t\t\t\treturn o;\n\t\t\t\t\n\t\t\t\to.VFX_VARYING_UV.x = float(id
       & 1);\n\t\t\t\to.VFX_VARYING_UV.y = float((id & 2) >> 1);\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\tfloat3
@@ -902,7 +903,7 @@ VisualEffectResource:
       values:
       - nameId: Scale_d
         index: 11
-      - nameId: gradient_e
+      - nameId: Color_e
         index: 10
       - nameId: Alpha_f
         index: 9
@@ -1063,6 +1064,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614583}
   - {fileID: 8926484042661614585}
   - {fileID: 8926484042661614587}
+  - {fileID: 8926484042661614761}
   - {fileID: 8926484042661614726}
   m_UIPosition: {x: 483, y: 1141}
   m_UICollapsed: 0
@@ -1313,7 +1315,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661614588}
   m_OutputSlots: []
-  m_Disabled: 0
+  m_Disabled: 1
   mode: 1
   ColorComposition: 2
   AlphaComposition: 2
@@ -3567,3 +3569,65 @@ MonoBehaviour:
   - {fileID: 8926484042661614577}
   m_Capacity: 1000
   m_Space: 1
+--- !u!114 &8926484042661614761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ec2c1930009b04ea08905b47262415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 8926484042661614577}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 629}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots:
+  - {fileID: 8926484042661614762}
+  m_OutputSlots: []
+  m_Disabled: 0
+  attribute: color
+  Composition: 0
+  AlphaComposition: 0
+  SampleMode: 0
+  Mode: 1
+  ColorMode: 1
+  channels: 6
+--- !u!114 &8926484042661614762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f778ff57c4e8145b9681fe3268d8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661614762}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614761}
+    m_Value:
+      m_Type:
+        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":6.274509906768799,"g":6.180392265319824,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":3.971104145050049,"g":2.0167388916015627,"b":0.062373366206884387,"a":1.0},"time":0.3529411852359772},{"color":{"r":1.8980392217636109,"g":1.772549033164978,"b":0.0784313753247261,"a":1.0},"time":0.6705882549285889},{"color":{"r":5.647058963775635,"g":2.0705883502960207,"b":0.0,"a":1.0},"time":0.8764781951904297},{"color":{"r":0.0,"g":0.961632251739502,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.45587852597236636},{"alpha":1.0,"time":0.9794155955314636}],"gradientMode":0}'
+    m_Space: 2147483647
+  m_Property:
+    name: Color
+    m_serializedType:
+      m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    attributes: []
+  m_Direction: 0
+  m_LinkedSlots: []
