@@ -20,13 +20,8 @@ public class PlayerLight : MonoBehaviour
     {
         if (Input.GetButtonDown("Light"))
         {
-            anim.SetBool("usingLight", true);
-            lightToToggle.enabled = true;
-        }
-        else if (Input.GetButtonUp("Light"))
-        {
-            anim.SetBool("usingLight", false);
-            lightToToggle.enabled = false;
+            anim.SetBool("usingLight", !anim.GetBool("usingLight"));
+            lightToToggle.enabled = !lightToToggle.enabled;
         }
     }
 }
