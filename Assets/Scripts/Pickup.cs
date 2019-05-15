@@ -20,17 +20,20 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        foreach (ParticleSystem p in particleSystems)
+        if (other.tag == "Player")
         {
-            p.Stop(true);
-        }
+            foreach (ParticleSystem p in particleSystems)
+            {
+                p.Stop(true);
+            }
 
-        foreach (Renderer r in renderers)
-        {
-            r.enabled = false;
-        }
+            foreach (Renderer r in renderers)
+            {
+                r.enabled = false;
+            }
 
-        audioSource.Play();
-        boxCollider.enabled = false;
+            audioSource.Play();
+            boxCollider.enabled = false;
+        }
     }
 }
